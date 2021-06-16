@@ -1,11 +1,17 @@
+<style scoped>
+  .background-red{
+    background-color: red;
+  }
+</style>
+
 <template>
-  <div>
+  <b-container class="background-red">
     <Header/>
-  </div>
+  </b-container>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
+import Header from '@/components/header/Header.vue'
 export default {
   name: 'HelloWorld',
   props: {

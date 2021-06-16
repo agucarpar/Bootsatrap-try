@@ -1,0 +1,41 @@
+<template>
+  <div>
+    <b-navbar toggleable="lg" class="justify-content-between">
+      <b-navbar-nav>
+        <b-nav-item href="#">Expedientes</b-nav-item>
+        <b-nav-item href="#">Documentos</b-nav-item>
+      </b-navbar-nav>
+
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+
+          <p class="mb-0 info" @click="togglingArrowIcon" v-b-toggle.collapse-1>
+            Desplegar todo
+            <b-icon v-if="showIconArrowUp" icon="chevron-double-up" aria-hidden="true"></b-icon>
+            <b-icon v-else icon="chevron-double-down" aria-hidden="true"></b-icon>
+          </p>
+      </b-navbar-nav>
+  </b-navbar>
+  <b-collapse id="collapse-1" >
+      <b-card>
+        <p class="card-text">Collapse contents Here</p>
+      </b-card>
+    </b-collapse>
+  </div>
+</template>
+
+<script>
+export default {
+  name:"BottomRow",
+  data() {
+    return {
+      showIconArrowUp: false,
+    }
+  },
+  methods: {
+    togglingArrowIcon() {
+      this.showIconArrowUp = !this.showIconArrowUp
+    }
+    }
+}
+</script>
