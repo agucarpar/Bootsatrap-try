@@ -18,15 +18,22 @@
   </b-navbar>
   <b-collapse id="collapse-1" >
       <b-card>
-        <p class="card-text">Collapse contents Here</p>
+        <div class="card-text">
+          <CollapsableContent/>
+        </div>
       </b-card>
     </b-collapse>
   </div>
 </template>
 
 <script>
+import CollapsableContent from '@/components/header/CollapsableContent.vue'
+
 export default {
   name:"BottomRow",
+  components: {
+    CollapsableContent,
+  },
   data() {
     return {
       showIconArrowUp: false,
