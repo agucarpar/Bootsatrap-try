@@ -2,8 +2,10 @@
   <div>
     <b-navbar toggleable="lg" class="justify-content-between">
       <b-navbar-nav>
-        <b-nav-item href="#">Expedientes</b-nav-item>
-        <b-nav-item href="#">Documentos</b-nav-item>
+
+        <b-nav-item  @click="showRecords">Expedientes ({{0}})</b-nav-item>
+        <b-nav-item @click="showDocuments">Documentos ({{0}})</b-nav-item>
+
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -40,9 +42,12 @@ export default {
     }
   },
   methods: {
-    togglingArrowIcon() {
+    showRecords() {
+      this.showIconArrowUp = !this.showIconArrowUp
+    },
+    showDocuments() {
       this.showIconArrowUp = !this.showIconArrowUp
     }
-    }
+  }
 }
 </script>
