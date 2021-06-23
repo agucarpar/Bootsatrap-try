@@ -7,8 +7,8 @@
 <template>
   <b-container class="background-red">
     <Header/>
-    <Record v-if="isShowingDocumentsComponent"/>
-    <Document v-if="isShowingRecordsComponent"/>
+    <Document v-if="isShowDocumentsComponent"/>
+    <Record  v-if="isShowRecordComponent"/>
 
   </b-container>
 </template>
@@ -17,23 +17,23 @@
 import Header from '@/components/header/Header.vue'
 import Record from '@/components/tabs/Record.vue'
 import Document from '@/components/tabs/Document.vue'
+import { mapState } from 'vuex'
+
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  },
-  computed: {
-    isShowingRecordsComponent() {
-      return this.$store.state.isShowingRecordsComponent
-    },
-    isShowingDocumentsComponent() {
-      return this.$store.state.isShowingDocumentsComponent
-    }
-  },
   components: {
     Header,
     Record,
     Document,
+  },
+  props: {
+    msg: String
+  },
+  computed: {
+    ...mapState([
+      'isShowRecordComponent',
+      'isShowDocumentsComponent'
+    ])
   },
 }
 </script>

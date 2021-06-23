@@ -31,6 +31,7 @@
 
 <script>
 import CollapsableContent from '@/components/header/CollapsableContent.vue'
+import { mapActions } from 'vuex'
 
 export default {
   name:"BottomRow",
@@ -42,14 +43,17 @@ export default {
       showIconArrowUp: false,
     }
   },
-  methods: {
+
+    methods: {
+    ...mapActions([
+      'actionShowRecordComponent',
+      'actionShowDocumentComponent',
+    ]),
     showRecordsComponent() {
-      this.$store.state.isShowingDocumentsComponent = false
-      this.$store.state.isShowingRecordsComponent = true
+      this.actionShowRecordComponent()
     },
     showDocumentsComponent() {
-      this.$store.state.isShowingRecordsComponent = false
-      this.$store.state.isShowingDocumentsComponent = true
+      this.actionShowDocumentComponent()
     },
     togglingArrowUpDown() {
       this.showIconArrowUp = !this.showIconArrowUp
