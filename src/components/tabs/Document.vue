@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    Here, there will be the conen for header collapsable.
+    I am Document
   </div>
 </template>
 

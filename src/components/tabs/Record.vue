@@ -4,7 +4,9 @@
 
 <template>
   <div>
-    Here, there will be the conen for header collapsable.
+    <p>
+      I am Record
+    </p>
   </div>
 </template>
 
