@@ -11,26 +11,20 @@ export const store = new Vuex.Store({
   mutations: {
 
     showRecordComponent(context) {
+      context.isShowDocumentsComponent = false
       context.isShowRecordComponent = true
     },
-    hideRecordComponent(context) {
-      context.isShowRecordComponent = false
-    },
     showDocumentComponent(context) {
+      context.isShowRecordComponent = false
       context.isShowDocumentsComponent = true
-    },
-    hideDocumentComponent(context) {
-      context.isShowDocumentsComponent = false
     },
   },
 
   actions: {
     actionShowRecordComponent({commit}) {
-      commit('hideDocumentComponent')
       commit('showRecordComponent')
     },
     actionShowDocumentComponent({commit}) {
-      commit('hideRecordComponent')
       commit('showDocumentComponent')
     },
   }
