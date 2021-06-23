@@ -7,7 +7,7 @@
 <template>
   <b-container class="background-red">
     <Header/>
-    <Record/>
+    <Record v-if="isShowingDocumentsComponent"/>
     <Document v-if="isShowingRecordsComponent"/>
 
   </b-container>
@@ -25,6 +25,9 @@ export default {
   computed: {
     isShowingRecordsComponent() {
       return this.$store.state.isShowingRecordsComponent
+    },
+    isShowingDocumentsComponent() {
+      return this.$store.state.isShowingDocumentsComponent
     }
   },
   components: {

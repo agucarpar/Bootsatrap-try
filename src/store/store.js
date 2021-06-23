@@ -6,7 +6,6 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     isShowingRecordsComponent: true,
-    isShowingDocumentsComponent: true,
-    counter: 1,
+    isShowingDocumentsComponent: false,
   },
 })

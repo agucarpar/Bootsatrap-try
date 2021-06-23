@@ -3,10 +3,8 @@
     <b-navbar toggleable="lg" class="justify-content-between">
       <b-navbar-nav>
 
-        <b-nav-item  @click="showRecords()">Expedientes ({{0}})</b-nav-item>
-        <b-nav-item @click="showDocuments()">Documentos ({{0}})</b-nav-item>
-        <b-nav-item @click="trytin()">{{counter}}</b-nav-item>
-        <b-nav-item @click="trytin()" v-if="counter">{{counter}}</b-nav-item>
+        <b-nav-item  @click="showRecordsComponent()">Expedientes ({{0}})</b-nav-item>
+        <b-nav-item @click="showDocumentsComponent()">Documentos ({{0}})</b-nav-item>
 
 
       </b-navbar-nav>
@@ -44,23 +42,19 @@ export default {
       showIconArrowUp: false,
     }
   },
-  computed: {
-    counter() {
-      return this.$store.state.isShowingRecordsComponent
-    }
-  },
   methods: {
-    showRecords() {
-      this.showIconArrowUp = !this.showIconArrowUp
+    showRecordsComponent() {
+      this.$store.state.isShowingDocumentsComponent = false
+      this.$store.state.isShowingRecordsComponent = true
     },
-    isShowingRecordsComponent() {
-      this.showIconArrowUp = !this.showIconArrowUp
+    showDocumentsComponent() {
+      this.$store.state.isShowingRecordsComponent = false
+      this.$store.state.isShowingDocumentsComponent = true
     },
     togglingArrowUpDown() {
       this.showIconArrowUp = !this.showIconArrowUp
     },
     trytin() {
-      this.$store.state.isShowingRecordsComponent = !this.$store.state.isShowingRecordsComponent
     }
   }
 }
